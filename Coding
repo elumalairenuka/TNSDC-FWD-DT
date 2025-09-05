@@ -1,0 +1,321 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Art Director — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0c10; --surface:#121318; --card:#151823; --text:#eef1f7; --muted:#9aa3b2; --accent:#7c5cff; --accent-2:#26ffe6; --ring: rgba(124,92,255,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font:16px/1.6 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:radial-gradient(1200px 800px at 90% -10%, rgba(124,92,255,.12), transparent 70%), radial-gradient(800px 600px at 0% 110%, rgba(38,255,230,.08), transparent 60%), var(--bg); color:var(--text)}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    .nav{position:sticky; top:0; z-index:40; backdrop-filter:saturate(140%) blur(10px); background:linear-gradient(180deg, rgba(11,12,16,.8), rgba(11,12,16,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.6px}
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:0 0 0 6px var(--ring)}
+    .nav-links{display:flex; gap:18px; align-items:center}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:14px; background:linear-gradient(180deg, #1a1c27, #121318); border:1px solid rgba(255,255,255,.08); color:var(--text); cursor:pointer}
+    .btn:hover{box-shadow:0 10px 30px rgba(124,92,255,.18); border-color:rgba(124,92,255,.45)}/* Hero */
+.hero{padding:64px 24px 24px}
+.badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:var(--muted); background:rgba(255,255,255,.03)}
+.title{font-family:"Playfair Display", serif; font-weight:700; font-size:clamp(36px, 6vw, 72px); line-height:1.06; margin:18px 0}
+.kicker{color:var(--muted); max-width:720px}
+.hero-cta{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap}
+
+/* Project Title Card */
+.project-title-card{margin:28px 0 10px; padding:18px; background:linear-gradient(180deg,#151823,#111420); border:1px solid rgba(255,255,255,.08); border-radius:16px; display:flex; align-items:center; gap:12px}
+.project-title-card label{font-size:14px; color:var(--muted)}
+.project-title{flex:1; font-size:20px; font-weight:600; padding:12px 14px; background:#0f121a; color:var(--text); border:1px solid rgba(255,255,255,.08); border-radius:12px; outline:none}
+.project-title:focus{border-color:var(--accent); box-shadow:0 0 0 6px var(--ring)}
+
+/* Sections */
+section{padding:40px 24px}
+.section-head{display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:12px}
+h2{font-size:clamp(22px,3vw,32px); margin:0}
+.muted{color:var(--muted)}
+
+/* Grid */
+.grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+.card{grid-column:span 12; background:linear-gradient(180deg,#151823,#10131d); border:1px solid rgba(255,255,255,.08); border-radius:18px; overflow:hidden; position:relative}
+@media(min-width:760px){ .card{grid-column:span 6} }
+@media(min-width:1080px){ .card{grid-column:span 4} }
+.thumb{position:relative; aspect-ratio: 16/10; background:#0e1118; overflow:hidden}
+.thumb img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05)}
+.chip{position:absolute; top:10px; left:10px; padding:6px 10px; border-radius:999px; background:rgba(0,0,0,.55); color:#fff; font-size:12px; border:1px solid rgba(255,255,255,.18)}
+.meta{padding:16px 16px 20px}
+.meta h3{margin:2px 0 6px}
+.meta p{margin:0; color:var(--muted)}
+.card:hover{transform:translateY(-2px); transition:transform .25s ease; box-shadow:0 20px 60px rgba(124,92,255,.15)}
+
+/* Marquee */
+.marquee{overflow:hidden; white-space:nowrap; border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); background:linear-gradient(180deg, rgba(255,255,255,.03), transparent)}
+.marquee-inner{display:inline-block; padding:10px 0; animation:scroll 30s linear infinite}
+.tag{display:inline-flex; align-items:center; gap:8px; margin-right:26px; color:var(--muted)}
+.tag .dot{width:6px;height:6px; box-shadow:none}
+@keyframes scroll{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
+
+/* Footer */
+footer{padding:50px 24px; color:var(--muted); text-align:center}
+.socials{display:flex; justify-content:center; gap:14px; margin:12px 0 0}
+.socials a{padding:8px 12px; border:1px solid rgba(255,255,255,.12); border-radius:999px}
+
+/* Utility */
+.hidden{display:none}
+
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <div class="nav">
+    <div class="nav-inner container">
+      <div class="brand"><span class="dot"></span> <span id="brandText">ART DIRECTOR</span></div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="btn" id="downloadBtn" title="Download this page as HTML">⇩ Download</button>
+      </div>
+    </div>
+  </div>  <!-- Hero -->  <header class="container hero">
+    <span class="badge">Portfolio • 2025</span>
+    <h1 class="title">Crafting visual narratives that make brands unmistakable.</h1>
+    <p class="kicker">Art Director focused on campaign systems, brand worlds, film frames, and digital experiences. Available for commissions and collaborations.</p><div class="project-title-card">
+  <label for="projectTitle">Project Title</label>
+  <input id="projectTitle" class="project-title" placeholder="e.g., ‘Monsoon ‘25 Fashion Campaign’"/>
+  <button class="btn" id="applyTitle">Apply</button>
+</div>
+
+<div class="hero-cta">
+  <a class="btn" href="#work">View Selected Work</a>
+  <a class="btn" href="#contact">Get in Touch</a>
+</div>
+
+  </header>  <!-- Scrolling tags -->  <div class="marquee">
+    <div class="marquee-inner">
+      <span class="tag"><span class="dot"></span> Brand Systems</span>
+      <span class="tag"><span class="dot"></span> Campaign Direction</span>
+      <span class="tag"><span class="dot"></span> Motion & Film</span>
+      <span class="tag"><span class="dot"></span> Editorial Art</span>
+      <span class="tag"><span class="dot"></span> 3D/CGI</span>
+      <span class="tag"><span class="dot"></span> Experience Design</span>
+      <span class="tag"><span class="dot"></span> Art Buying</span>
+      <span class="tag"><span class="dot"></span> Retouch & Grade</span>
+      <!-- duplicate for smooth loop -->
+      <span class="tag"><span class="dot"></span> Brand Systems</span>
+      <span class="tag"><span class="dot"></span> Campaign Direction</span>
+      <span class="tag"><span class="dot"></span> Motion & Film</span>
+      <span class="tag"><span class="dot"></span> Editorial Art</span>
+      <span class="tag"><span class="dot"></span> 3D/CGI</span>
+      <span class="tag"><span class="dot"></span> Experience Design</span>
+      <span class="tag"><span class="dot"></span> Art Buying</span>
+      <span class="tag"><span class="dot"></span> Retouch & Grade</span>
+    </div>
+  </div>  <!-- Work -->  <section id="work" class="container">
+    <div class="section-head">
+      <h2>Selected Work</h2>
+      <p class="muted">Add your case studies and set the <strong>Project Title</strong> above to headline a new pitch.</p>
+    </div><div class="grid" id="grid">
+  <!-- Cards injected below are examples; replace images/links with your own -->
+  <article class="card">
+    <a class="thumb" href="#" target="_blank" rel="noreferrer noopener">
+      <img src="https://images.unsplash.com/photo-1552318965-6e6be7484ada?q=80&w=1400&auto=format&fit=crop" alt="Editorial campaign still">
+      <span class="chip">Campaign</span>
+    </a>
+    <div class="meta">
+      <h3>City In Bloom</h3>
+      <p>360° fashion launch across film, print, OOH, and social — led art direction, grade, and graphic system.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <a class="thumb" href="#" target="_blank" rel="noreferrer noopener">
+      <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1400&auto=format&fit=crop" alt="Product still life">
+      <span class="chip">Still Life</span>
+    </a>
+    <div class="meta">
+      <h3>Chromatic Objects</h3>
+      <p>Studio stills art direction — color stories and sculptural sets for premium tech accessories.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <a class="thumb" href="#" target="_blank" rel="noreferrer noopener">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1400&auto=format&fit=crop" alt="Outdoor OOH mock">
+      <span class="chip">OOH</span>
+    </a>
+    <div class="meta">
+      <h3>Night Market</h3>
+      <p>Art direction for food festival identity with neon typographic world and wayfinding.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <a class="thumb" href="#" target="_blank" rel="noreferrer noopener">
+      <img src="https://images.unsplash.com/photo-1520975940460-61e2752e52a0?q=80&w=1400&auto=format&fit=crop" alt="Film still frame">
+      <span class="chip">Film</span>
+    </a>
+    <div class="meta">
+      <h3>Frames for Winter</h3>
+      <p>Short film creative direction — storyboard, palette, shot curation, and final grade.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <a class="thumb" href="#" target="_blank" rel="noreferrer noopener">
+      <img src="https://images.unsplash.com/photo-1541577141970-eebc83ebe30a?q=80&w=1400&auto=format&fit=crop" alt="Brand system posters">
+      <span class="chip">Brand</span>
+    </a>
+    <div class="meta">
+      <h3>Transit Future</h3>
+      <p>Modular brand system for a mobility startup — grid language, poster series, motion kit.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <a class="thumb" href="#" target="_blank" rel="noreferrer noopener">
+      <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1400&auto=format&fit=crop" alt="3D render">
+      <span class="chip">3D/CGI</span>
+    </a>
+    <div class="meta">
+      <h3>Liquid Metal</h3>
+      <p>Look‑dev and direction for CGI material studies used across web and film idents.</p>
+    </div>
+  </article>
+</div>
+
+<div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap">
+  <button class="btn" id="addCard">+ Add Project</button>
+  <button class="btn" id="clearCards">✕ Clear All</button>
+</div>
+
+  </section>  <!-- About -->  <section id="about" class="container">
+    <div class="section-head"><h2>About</h2></div>
+    <p class="muted">I direct imagery and brand worlds that feel inevitable. Over the past 7+ years I've led integrated campaigns and identity systems for fashion, tech, and culture clients. Comfortable from concept to set to grade, with a network of photographers, stylists, and makers across APAC & EU.</p>
+  </section>  <!-- Contact -->  <section id="contact" class="container">
+    <div class="section-head"><h2>Contact</h2></div>
+    <p class="muted">For commissions, collaboration, or reels: email <a href="mailto:hello@yourname.design">hello@yourname.design</a> or message on <a href="#">Instagram</a> / <a href="#">LinkedIn</a>.</p>
+  </section>  <footer>
+    <div>© <span id="year"></span> Your Name — Art Director</div>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Behance</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Email</a>
+    </div>
+  </footer>  <script>
+    // Utilities
+    const $ = (sel, ctx=document) => ctx.querySelector(sel);
+
+    // Project Title handling
+    const projectTitleInput = $('#projectTitle');
+    const brandText = $('#brandText');
+    const applyTitleBtn = $('#applyTitle');
+
+    // Load from localStorage if present
+    const saved = localStorage.getItem('projectTitle');
+    if(saved){ projectTitleInput.value = saved; brandText.textContent = saved; }
+
+    applyTitleBtn.addEventListener('click', ()=>{
+      const val = projectTitleInput.value.trim();
+      if(!val){ alert('Please enter a project title.'); return; }
+      brandText.textContent = val;
+      localStorage.setItem('projectTitle', val);
+    });
+
+    // Year
+    $('#year').textContent = new Date().getFullYear();
+
+    // Add & clear project cards
+    const grid = $('#grid');
+    $('#addCard').addEventListener('click', ()=>{
+      const title = prompt('Project name?');
+      if(!title) return;
+      const desc = prompt('One‑line description?') || '—';
+      const url = prompt('Project link (https://...)');
+      const tag = prompt('Tag (e.g., Campaign, Brand, Film)') || 'Case Study';
+      const img = prompt('Image URL (https://...)\nTip: Unsplash works great!') || 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop';
+
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <a class="thumb" ${url?`href="${url}" target="_blank" rel="noreferrer noopener"`:''}>
+          <img src="${img}" alt="${title}">
+          <span class="chip">${tag}</span>
+        </a>
+        <div class="meta">
+          <h3>${title}</h3>
+          <p>${desc}</p>
+        </div>`;
+      grid.prepend(card);
+      persistGrid();
+    });
+
+    $('#clearCards').addEventListener('click', ()=>{
+      if(confirm('Remove all added projects? (Example cards remain unless you delete them manually)')){
+        // Remove only cards we added (marked by data-added)
+        grid.querySelectorAll('[data-added]')?.forEach(el=>el.remove());
+        // Or clear everything added since last persist
+        const nodes = [...grid.children];
+        nodes.forEach(n=>{ if(n.hasAttribute('data-user')) n.remove(); });
+        localStorage.removeItem('userCards');
+      }
+    });
+
+    // Persistence for user-added cards
+    function persistGrid(){
+      const userCards = [];
+      grid.querySelectorAll('.card').forEach(card=>{
+        if(!card.matches('.example')){ card.setAttribute('data-user',''); }
+      });
+      grid.querySelectorAll('[data-user]').forEach(card=>{
+        const img = card.querySelector('img')?.src || '';
+        const title = card.querySelector('h3')?.textContent || '';
+        const desc = card.querySelector('p')?.textContent || '';
+        const tag = card.querySelector('.chip')?.textContent || '';
+        const link = card.querySelector('a.thumb')?.getAttribute('href') || '';
+        userCards.push({img,title,desc,tag,link});
+      });
+      localStorage.setItem('userCards', JSON.stringify(userCards));
+    }
+
+    // Restore user-added cards on load
+    (function restore(){
+      const raw = localStorage.getItem('userCards');
+      if(!raw) return;
+      try{
+        const arr = JSON.parse(raw);
+        arr.forEach(({img,title,desc,tag,link})=>{
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.setAttribute('data-user','');
+          card.innerHTML = `
+            <a class="thumb" ${link?`href="${link}" target="_blank" rel="noreferrer noopener"`:''}>
+              <img src="${img}" alt="${title}">
+              <span class="chip">${tag}</span>
+            </a>
+            <div class="meta">
+              <h3>${title}</h3>
+              <p>${desc}</p>
+            </div>`;
+          grid.prepend(card);
+        });
+      }catch(e){ console.warn('Could not restore cards', e); }
+    })();
+
+    // Download this page as an HTML file
+    $('#downloadBtn').addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'art-director-portfolio.html';
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+  </script></body>
+</html>
